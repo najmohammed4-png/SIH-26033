@@ -52,30 +52,41 @@ Logistics Module: Delivery assignment and order tracking.
 
 System Architecture:
 flowchart TD
-    A[Farmers / FPOs] --> B[Digital Marketplace]
-    C[Consumers / Bulk Buyers] --> B
-    B --> D[Backend Server]
-    D --> E[Database]
-    D --> F[AI Engine]
-    F --> G[Demand Forecasting]
-    F --> H[Route Optimization]
-    D --> I[Order Management]
-    I --> J[Logistics & Delivery]
+    A["Farmers / FPOs"] --> B["Digital Marketplace"]
+    C["Consumers / Buyers"] --> B
+    B --> D["Backend Server"]
+    D --> E[("Database")]
+    D --> F["AI Engine"]
+    F --> G["Demand & Price Prediction"]
+    F --> H["Route Optimization"]
+    D --> I["Order Management"]
+    I --> J["Logistics & Delivery"]
     J --> C
+
+    style A fill:#d1e7ff,stroke:#2563eb,color:#000
+    style B fill:#d1e7ff,stroke:#2563eb,color:#000
+    style D fill:#d1fae5,stroke:#059669,color:#000
+    style F fill:#f3e8ff,stroke:#9333ea,color:#000
+    style E fill:#fff3cd,stroke:#d97706,color:#000
+    style J fill:#d1fae5,stroke:#059669,color:#000
 
   Order Processing Workflow:
 
-  flowchart TD
-    A([Start]) --> B[Farmer Lists Products]
-    B --> C[Buyer Browses Products]
-    C --> D[Place Order]
-    D --> E[Payment Confirmation]
-    E --> F[Order Sent to Farmer]
-    F --> G[Logistics Assignment]
-    G --> H[Delivery]
-    H --> I[Order Completed]
-    I --> J([End])
+ flowchart TD
+    A(["Start"]) --> B["Farmer Lists Products"]
+    B --> C["Buyer Browses Products"]
+    C --> D["Selects Products"]
+    D --> E["Places Order"]
+    E --> F["Payment Confirmation"]
+    F --> G["Farmer Receives Order"]
+    G --> H["Delivery Assignment"]
+    H --> I["Product Delivered"]
+    I --> J(["Order Completed"])
 
+    style A fill:#d1fae5,stroke:#059669,color:#000
+    style J fill:#d1fae5,stroke:#059669,color:#000
+    style E fill:#dbeafe,stroke:#2563eb,color:#000
+    style H fill:#fef3c7,stroke:#d97706,color:#000
 ## Feasibility and Viability
 The solution can be developed using existing web technologies, cloud services and machine learning frameworks.
 
